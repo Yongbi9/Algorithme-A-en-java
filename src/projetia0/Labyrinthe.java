@@ -31,13 +31,14 @@ public class Labyrinthe {
         
         while(listeOuverts.size() > 0 && !succes){
             Noeud n = meilleurNoeud(listeOuverts);
+            addOpenToClosed(n);
             
             System.out.println("choix : ("+n.getX()+","+n.getY()+")");
+            
             if(isFinal(n)){
                 succes = true;
             }
             else{
-                addOpenToClosed(n);
                 
                 ArrayList<Noeud> successeurs = ajoutAdjacences(n);
                 for(int i = 0; i < successeurs.size(); i++){
@@ -195,7 +196,11 @@ public class Labyrinthe {
     
     //Reconstitution du chemin menant vers une solution
     private ArrayList<Noeud> retrouverChemin(){
-        return null;
+        ArrayList<Noeud> chainage = new ArrayList<>();
+        
+        
+        
+        return chainage;
     }
     
     //Retirer un noeud de la liste OPEN et le mettre dans la liste CLOSED
